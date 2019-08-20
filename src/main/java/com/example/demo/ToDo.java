@@ -8,14 +8,13 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class TODO {
+public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
     @NotNull
-@Size(min=4)
+    @Size(min=4, message = "Please Enter a Valid value")
     private String Task_Name;
     @NotNull
     @Size(min=4)

@@ -6,21 +6,24 @@
 </head>
 <body>
 <form action="#" th:action="@{/process}"
-      th:object="${todo}"
+      th:object="${toDo}"
       method="post">
-
-    ID: <input type="text" th:field="*{id}"/>
+    ID: <input type="hidden" th:field="*{id}"/>
     <span th:if="${#fields.hasErrors('id')}"
           th:errors="*{id}"></span> <br />
+
     Task Name: <input type="text" th:field="*{Task_Name}"/>
     <span th:if="${#fields.hasErrors('Task_Name')}"
           th:errors="*{Task_Name}"></span> <br />
+
     Due Date: <input type="text" th:field="*{duedate}"/>
     <span th:if="${#fields.hasErrors('duedate')}"
           th:errors="*{duedate}"></span> <br />
+
     Priority: <input type="text" th:field="*{priority}"/>
     <span th:if="${#fields.hasErrors('priority')}"
           th:errors="*{priority}"></span> <br />
+
     <input type="submit" value="Submit" />
 </form>
 </body>

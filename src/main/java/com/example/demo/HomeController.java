@@ -23,17 +23,17 @@ public class HomeController {
     }
     @GetMapping("/add")
     public String todoForm(Model model){
-        model.addAttribute("todo", new TODO());
+        model.addAttribute("toDo", new ToDo());
         return "todoform";
 
 
     }
     @PostMapping("/process")
-    public String processForm(@Valid TODO todo, BindingResult result){
+    public String processForm(@Valid ToDo toDo, BindingResult result){
         if(result.hasErrors()){
             return "todoform";
 
-        }todoRepository.save(todo);
+        }todoRepository.save(toDo);
         return "redirect:/";
     }
 
