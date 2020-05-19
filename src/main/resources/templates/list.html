@@ -3,18 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="todo.css">
+    <style>
+        .navbar-brand{
+            color: black;
+            text-align: right;
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even)
+    {background-color: #f2f2f2;}
+    .navbar-brand{
+        color: chartreuse;
+        text-align: right;
+    }
+    </style>
 </head>
 <body>
-<a href="/add"> Add  A TODO list </a>
-<div th:each="todo:${todos}">
-    <h4 th:inline="text"> [[${todo.id}]] </h4>
-    Due date:  <p th:text="${todo.duedate}" ></p>
-    Task Name: <p th:text="${todo.Task_Name}" ></p>
-    Priority:  <p th:text="${todo.priority}"></p>
 
 
+<div class="container">
 
+    <br>
+        <div class="jumbotron">
+            <nav class="navbar navbar-expand-sm bg-primary navbar-blue">
+                <a class="navbar-brand" href="#">To do List</a>
+            </nav>
+        <p>
+            <a href="/add">
+                <span class="glyphicon glyphicon-plus"></span> Add List</a>
+        </p>
 
+<table>
+    <tr>
+       <th>Name</th>
+        <th>Description</th>
+        <th>DueDate</th>
+        <th>Priority</th>
+        <th>Completed</th>
+    </tr>
+<tr th:each="todo:${todos}">
+<!--    <h4 th:inline="text"> [[${todo.id}]] </h4>-->
+   <td th:text="${todo.Task_Name}" ></td>
+    <td th:text="${todo.description}"></td>
+   <td th:text="${todo.duedate}" ></td>
+   <td th:text="${todo.priority}"></td>
+     <td th:text="${todo.is_completed}"></td>
+    <td>
+        <a th:href="@{/update/{id}(id=${todo.id})}"><span class="glyphicon glyphicon-edit"></span></a>
+     <a th:href="@{/detail/{id}(id=${todo.id})}"><span class="glyphicon glyphicon-folder-open"></span></a>
+        <a th:href="@{/delete/{id}(id=${todo.id})}"> <span class="glyphicon glyphicon-trash"></span></a>
+    </td>
+</tr>
+
+</table>
+</div>
+</div>
 </div>
 </body>
 </html>

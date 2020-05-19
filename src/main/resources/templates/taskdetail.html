@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .vl{
+            color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+<a href="/">List </a><br>
+    Task  ID: <p class="vl" th:text="${toDo.id}" ></p>
+    Task Name: <p class="vl" th:text="${toDo.Task_Name}" ></p>
+    Due date:  <p class="vl" th:text="${toDo.duedate}" ></p>
+    Priority:  <p class="vl" th:text="${toDo.priority}"></p>
+    Description:  <p class="vl" th:text="${toDo.description}"></p>
+    Completed:  <p  class="vl" th:text="${toDo.is_completed}"></p>
+
+<a th:href="@{/delete/{id}(id=${toDo.id})}">Delete</a>
+
+</body>
+</html>

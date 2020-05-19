@@ -23,6 +23,12 @@
     Priority: <input type="text" th:field="*{priority}"/>
     <span th:if="${#fields.hasErrors('priority')}"
           th:errors="*{priority}"></span> <br />
+    Description:<input type="text" th:field="*{description}"/>
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span><br>
+    Is Completed: <input type="text" th:field="*{is_completed}">
+    <span th:if="${#fields.hasErrors('is_completed')}"
+          th:errors="*{is_completed}"></span>
 
     <input type="submit" value="Submit" />
 </form>
