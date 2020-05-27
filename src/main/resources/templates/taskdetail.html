@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link type="text/css" th:href="@{/styles/todo.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/todo.css}">
+
 </head>
 <body>
-<a href="/">List </a><br>
-    Task  ID: <p class="vl" th:text="${toDo.id}" ></p>
-    Task Name: <p class="vl" th:text="${toDo.Task_Name}" ></p>
-    Due date:  <p class="vl" th:text="${toDo.duedate}" ></p>
-    Priority:  <p class="vl" th:text="${toDo.priority}"></p>
-    Description:  <p class="vl" th:text="${toDo.description}"></p>
-    Completed:  <p  class="vl" th:text="${toDo.is_completed}"></p>
+<a href="/">All List </a><br><br>
+    Task  ID: <span class="vl" th:text="${toDo.id}" ></span> <br>
+    Task Name: <span class="vl" th:text="${toDo.Task_Name}" ></span><br>
+    Due date:  <span class="vl" th:text="${toDo.duedate}" ></span><br>
+    Priority:  <span class="vl" th:text="${toDo.priority}"></span><br>
+    Description:  <span class="vl" th:text="${toDo.description}"></span><br>
+    Completed:  <span  class="vl" th:text="${toDo.is_completed}"></span><br><br>
 
-<a th:href="@{/delete/{id}(id=${toDo.id})}">Delete</a>
+<a th:href="@{/delete/{id}(id=${toDo.id})}">Delete this Task</a>
 
 </body>
 </html>

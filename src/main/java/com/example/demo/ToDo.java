@@ -13,18 +13,18 @@ public class ToDo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
+    @NotNull(message = "Can not be null")
     @Size(min=4, message = "Please Enter a Valid value")
     private String Task_Name;
     @NotNull
     @Size(min=4)
     private String duedate;
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
   private String priority;
     private String description;
     private boolean is_completed;
-    private String pictures;
+    //private String pictures;
 
     public long getId() {
         return id;
@@ -75,11 +75,11 @@ public class ToDo {
 
     }
 
-    public String getPictures() {
-        return pictures;
-    }
-
-    public void setPictures(String pictures) {
-        this.pictures = pictures;
-    }
+//    public String getPictures() {
+//        return pictures;
+//    }
+//
+//    public void setPictures(String pictures) {
+//        this.pictures = pictures;
+//    }
 }

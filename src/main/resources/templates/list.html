@@ -30,16 +30,17 @@
        <th>Name</th>
         <th>Description</th>
         <th>DueDate</th>
-        <th>Priority</th>
-        <th>Completed</th>
+<!--        <th>Priority</th>-->
+<!--        <th>Completed</th>-->
+        <th>Action</th>
     </tr>
 <tr th:each="todo:${todos}">
 <!--    <h4 th:inline="text"> [[${todo.id}]] </h4>-->
    <td th:text="${todo.Task_Name}" ></td>
     <td th:text="${todo.description}"></td>
    <td th:text="${todo.duedate}" ></td>
-   <td th:text="${todo.priority}"></td>
-     <td th:text="${todo.is_completed}"></td>
+<!--   <td th:text="${todo.priority}"></td>-->
+<!--     <td th:text="${todo.is_completed}"></td>-->
     <td>
         <a th:href="@{/update/{id}(id=${todo.id})}"><span class="glyphicon glyphicon-edit"></span></a>
      <a th:href="@{/detail/{id}(id=${todo.id})}"><span class="glyphicon glyphicon-folder-open"></span></a>
